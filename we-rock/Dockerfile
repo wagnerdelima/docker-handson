@@ -1,5 +1,8 @@
 FROM alpine
 
-ENTRYPOINT ['sleep']
+RUN apk add --upgrade apk-tools && apk add coreutils
 
-CMD ['5']
+RUN echo Will wait 5 seconds before quitting.
+
+ENTRYPOINT ["/bin/sleep"]
+CMD ["5"]
